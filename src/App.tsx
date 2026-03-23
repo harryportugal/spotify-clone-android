@@ -18,7 +18,13 @@ function MainLayout() {
   const showBottomNav = nowPlayingScreen === "mini" || nowPlayingScreen === "hidden";
 
   return (
-    <div className="w-full min-h-[100dvh] overflow-x-hidden relative bg-[#121212] flex flex-col">
+    <div 
+      className="w-full min-h-[100dvh] overflow-x-hidden relative bg-[#121212] flex flex-col"
+      style={{
+        paddingTop: "max(env(safe-area-inset-top), 1.5rem)",
+        paddingBottom: "env(safe-area-inset-bottom)"
+      }}
+    >
       <AnimatePresence mode="wait">
         <motion.div
           key={currentTab}
